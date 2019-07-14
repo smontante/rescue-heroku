@@ -1,0 +1,62 @@
+/** HEADER UNDER NAVBAR **/
+h5 b {
+    color:black;
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+
+
+
+/** CONTAINER FOR INPUTS AND FIND RATES BUTTON **/
+.container {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+
+.ratesBtn {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: chartreuse;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin: 20px 0px 20px 0px;
+}
+
+
+
+/** BG COLORS, MIDDLE BLOCKS DISPLAYING ICONS **/
+#lodging {
+    background-color: chartreuse;
+}
+
+#meals {
+    background-color: gray;
+    color:black;
+    border-color: gray;
+}
+
+#est_total {
+    background-color:black;
+    color:white;
+}
+
+
+
+/** TABLE HEADER AND ROWS **/
+.rescue {
+    background-color: black;
+    max-width: 100%;
+    font-size: 13px;
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+tbody, tr, th {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+
+
+

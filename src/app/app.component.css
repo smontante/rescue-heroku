@@ -1,0 +1,13 @@
+div {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+
+.w3-bar-item {
+    top: 0;
+}
+
+
+a img {
+    padding:2px;
+    max-width: 30%;
+}

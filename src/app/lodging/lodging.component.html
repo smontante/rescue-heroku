@@ -1,0 +1,78 @@
+<!--header under top navbar-->
+<header class="w3-container" style="padding-top:22px">
+  <h5><b><i class="fa fa-bar-chart"></i>Per Diem Rates</b></h5>
+</header>
+
+<!--container : Row 7-66-->
+<div class="container">
+
+<!--inputs and find rates button-->
+<div class="w3-row-padding" style="margin:0 -16px;">
+    <div class="w3-half w3-margin-bottom">
+        <label><i class="fa fa-calendar"></i>Start Date</label>
+        <input [(ngModel)]="startDate" placeholder="mm dd yyyy" type="date" class="form-control">     
+    </div>
+    <div class="w3-half w3-margin-bottom">
+        <label><i class="fa fa-calendar"></i>End Date</label>
+        <input [(ngModel)]="endDate" placeholder="mm dd yyy" type="date" class="form-control">
+    </div>
+    <div class="w3-full w3-margin-bottom">
+        <label><i class="fa fa-map-marker"></i>Zip Code</label>
+        <input [(ngModel)]="perdiem$.zip" placeholder="" type="number" class="form-control">     
+        <button type="button" class="ratesBtn" (click)="searchZip(); parseDate(); passDayDiff()">Find Rates</button>
+    </div>
+</div>
+
+<!--inputs and find rates button-->
+<div class="w3-row-padding w3-margin-bottom">
+  
+  <div id="lodging" class="w3-quarter">
+    <div class="w3-container w3-padding-16">
+      <div class="w3-left"><i class="fa fa-hotel w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 *ngIf="gsaResults.result">${{gsaResults.result.records[0].May}} per night</h3>
+        </div>
+      <div class="w3-clear"></div>
+    <h4>Lodging</h4>
+  </div>
+</div>
+<div id="meals" class="w3-quarter">
+  <div class="w3-container w3-padding-16">
+    <div class="w3-left"><i class="fa fa-cutlery w3-xxxlarge"></i></div>
+      <div class="w3-right">
+        <h3 *ngIf="gsaResults.result">${{gsaResults.result.records[0].Meals}} per night</h3>
+      </div>
+    <div class="w3-clear"></div>
+    <h4>Meals IE</h4>
+  </div>
+</div>
+<div id="est_total" class="w3-quarter">
+  <div class="w3-container w3-padding-16">
+    <div class="w3-left"><i class="fa fa-calculator w3-xxxlarge"></i></div>
+      <div class="w3-right">
+        <h3 *ngIf="gsaResults.result">$231 per night</h3>
+      </div>
+    <div class="w3-clear"></div>
+    <h4>Est. Total</h4>
+  </div>
+</div>
+
+</div>
+
+<!--text below 3 boxes-->
+<h2 *ngIf="gsaResults.result">Breakdown:</h2>
+<h3 *ngIf="gsaResults.result">You are traveling on {{startDate}} to {{endDate}} for {{diff}} days!</h3>
+
+<p *ngIf="gsaResults.result">*The first and last calendar dates of M&IE are calculated at 75%</p>
+
+</div>
+
+<!--helping you customer achieve your goal-->
+
+
+
+
+
+  
+
+
