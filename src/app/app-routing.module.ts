@@ -3,8 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LodgingComponent } from './lodging/lodging.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/perdiem', pathMatch: 'full' },
-  { path: 'perdiem', component: LodgingComponent }
+  { path: '', component: LodgingComponent }
 ];
 
 @NgModule({

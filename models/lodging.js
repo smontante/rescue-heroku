@@ -1,13 +1,22 @@
 const mongoose = require('mongoose')
 
 const Lodging = mongoose.model('lodging', {
-    start: {
-        type: Date,
+    name: {
+        type: String,
     },
-    end: {
-        type: Date,
+    // start: {
+    //     type: String,
+    // },
+    // end: {
+    //     type: String,
+    // },
+    lodging: {
+        type: Number,
     },
-    zip: {
+    meals: {
+        type: Number,
+    },
+    total: {
         type: Number,
     }
 })

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +15,35 @@ export class PerdiemService {
   state:String="";
   startMonth:String = "";
   endMonth:String = "";
+  lodging:any;
+  meals:any;
+  estTotal:any;
+  startDate:any; 
+  endDate:any;
+  postUrl = '/lodging';
+  name:String;
   
     constructor(public http: HttpClient) { }
 
     getGsaData(){
-      //return this.http.get(this.url + this.gsaApiKey);
       return this.http.get(this.url + this.gsaApiKey + '&filters={"FiscalYear":"2019","Zip":' + this.zip + ' }');
     }
 
-    
-  
+    saveLodging() {
+      console.log('name: ', this.name);
+      console.log('start: ', this.startDate);
+      console.log('end: ', this.endDate);
+      console.log('lodging: ', this.lodging);
+      console.log('meals: ', this.meals);
+      console.log('totals: ', this.estTotal);
+      this.http.post('/lodging', {
+        name: this.name,
+        lodging: this.lodging, 
+        meals: this.meals, 
+        total: this.estTotal
+      }).subscribe( data => {
+        console.log('data to post: ', data);
+      });
+    }
+      
 }
